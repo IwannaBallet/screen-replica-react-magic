@@ -15,13 +15,13 @@ const KoreanAppInterface = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center p-4">
         {/* Content Blocks */}
-        <div className="mt-4 mb-10 w-full">
+        <div className="mt-4 mb-4 w-full">
           <ContentBlocks />
         </div>
 
-        {/* Question Text */}
+        {/* Question Text - Moved below the content blocks */}
         <div className="mb-auto">
-          <p className="text-xl font-medium text-cyan-400">뭐먹을생?</p>
+          <p className="text-2xl font-medium text-cyan-50">뭐먹을냉?</p>
         </div>
 
         {/* Search Bar */}
