@@ -3,34 +3,56 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import ActionButtons from "./ActionButtons";
 import ContentBlocks from "./ContentBlocks";
+import { Switch } from "./ui/switch";
+import { ChevronRight } from "lucide-react";
 
 const KoreanAppInterface = () => {
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
+    <div className="flex flex-col h-screen bg-white">
       {/* Header */}
-      <header className="p-3 bg-gray-100">
-        <h1 className="text-sm text-gray-700 font-medium">레시피(예식)</h1>
+      <header className="p-4 flex items-center justify-between">
+        <h1 className="text-[#00e1c5] font-medium text-lg">My page</h1>
       </header>
+
+      {/* Settings Section */}
+      <div className="px-4 py-2 border-b border-gray-100">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-sm font-medium text-gray-800">유통기한 만료 알림</span>
+          <Switch />
+        </div>
+        
+        <div className="flex items-center justify-between py-3">
+          <span className="text-sm font-medium text-gray-800">아이디 변경하기</span>
+          <ChevronRight className="h-5 w-5 text-gray-400" />
+        </div>
+        
+        <div className="flex items-center justify-between py-3">
+          <span className="text-sm font-medium text-gray-800">비밀번호 변경하기</span>
+          <ChevronRight className="h-5 w-5 text-gray-400" />
+        </div>
+      </div>
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center p-4">
         {/* Content Blocks */}
-        <div className="mt-4 mb-4 w-full">
+        <div className="mt-4 mb-4 w-full max-w-xs">
           <ContentBlocks />
         </div>
 
-        {/* Question Text - Moved below the content blocks */}
-        <div className="mb-auto">
-          <p className="text-2xl font-medium text-cyan-50">뭐먹을냉?</p>
+        {/* Question Text */}
+        <div className="mb-8 mt-2">
+          <p className="text-2xl font-medium text-[#00e1c5]">뭐먹을냉?</p>
         </div>
 
-        {/* Search Bar */}
-        <div className="w-full mt-auto mb-4">
-          <SearchBar />
+        {/* Action Button - Primary */}
+        <div className="w-full max-w-xs mb-4">
+          <button className="w-full py-3 px-4 rounded-md bg-[#00e1c5] text-white font-medium">
+            로그아웃
+          </button>
         </div>
 
-        {/* Action Buttons */}
-        <div className="w-full mb-6">
+        {/* Bottom Action Buttons */}
+        <div className="w-full max-w-xs mb-6">
           <ActionButtons />
         </div>
       </main>
