@@ -13,6 +13,10 @@ const KoreanAppInterface = () => {
     navigate("/logout");
   };
 
+  const handlePasswordChange = () => {
+    navigate("/change-password");
+  };
+
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Header */}
@@ -32,7 +36,10 @@ const KoreanAppInterface = () => {
           <ChevronRight className="h-5 w-5 text-gray-400" />
         </div>
         
-        <div className="flex items-center justify-between py-3">
+        <div 
+          className="flex items-center justify-between py-3 cursor-pointer"
+          onClick={handlePasswordChange}
+        >
           <span className="text-sm font-medium text-gray-800">비밀번호 변경하기</span>
           <ChevronRight className="h-5 w-5 text-gray-400" />
         </div>
