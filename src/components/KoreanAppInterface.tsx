@@ -1,12 +1,18 @@
 
 import React from "react";
-import SearchBar from "./SearchBar";
+import { useNavigate } from "react-router-dom";
 import ActionButtons from "./ActionButtons";
 import ContentBlocks from "./ContentBlocks";
 import { Switch } from "./ui/switch";
 import { ChevronRight } from "lucide-react";
 
 const KoreanAppInterface = () => {
+  const navigate = useNavigate();
+  
+  const handleLogoutClick = () => {
+    navigate("/logout");
+  };
+
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Header */}
@@ -46,7 +52,10 @@ const KoreanAppInterface = () => {
 
         {/* Action Button - Primary */}
         <div className="w-full max-w-xs mb-4">
-          <button className="w-full py-3 px-4 rounded-md bg-[#00e1c5] text-white font-medium">
+          <button 
+            className="w-full py-3 px-4 rounded-md bg-[#00e1c5] text-white font-medium"
+            onClick={handleLogoutClick}
+          >
             로그아웃
           </button>
         </div>
